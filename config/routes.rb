@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   root 'dustbins#new'
 
   get '/show' => 'dustbins#show'
+
+  get '/stats' => 'dustbins#stats'
 end

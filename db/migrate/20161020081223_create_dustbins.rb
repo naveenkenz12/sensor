@@ -1,11 +1,11 @@
 class CreateDustbins < ActiveRecord::Migration[5.0]
   def change
     create_table :dustbins do |t|
-      t.decimal :filled_level
-      t.decimal :temperature
-      t.string :health
-      t.string :location
-      t.string :long_lat
+      t.integer :filled_level
+      t.integer :temperature
+      t.string :health, null: true
+      t.string :location, null: true
+      t.string :long_lat, null: true
       t.timestamps
     end
   end

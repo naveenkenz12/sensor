@@ -55,3 +55,11 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'postgresql-check'
 
 gem 'composite_primary_keys'
+
+gem 'populator'
+
+gem 'faker'
+
+gem 'fusioncharts-rails'
+
+gem "chartkick"

@@ -1,8 +1,31 @@
 <!DOCTYPE html>
 <html>
+<head>
+
+<style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+</style>
+</head>
+
 <body>
 
 <script>
+
+
 $(document).ready(function() {
     setInterval(function(){ 
     	$.ajax( {
@@ -11,11 +34,43 @@ $(document).ready(function() {
           success: function( data ) {
           	var final = [];
           	var i;
-          	window.alert(data['status']);
+            for(i=1;i<=data['value'].length;i++)
+            {
+              document.getElementById("_"+i.toString()+"_1").innerHTML = data['value'][i][0];
+              document.getElementById("_"+i.toString()+"_2").innerHTML = data['value'][i][1];
+              document.getElementById("_"+i.toString()+"_3").innerHTML = data['value'][i][2];
+              document.getElementById("_"+i.toString()+"_4").innerHTML = data['value'][i][3];
+            }
+            for(i=data['value'].length+1;i<=50;i++)
+            {
+              document,getElementById("_"+i.toString()).style.display = "none";
+            }
           }
         } ); }, 15000);
 });
 </script>
+
+
+<table style="width:100%">
+  <tr id="_0">
+    <b>
+    <th>Location</th>
+    <th>Filled Level(%)</th> 
+    <th>Temperature</th>
+    <th>Health</th>
+    </b>
+  </tr>
+  <% for i in 1..20 %>
+  <tr id="_<%= i %>" >
+    <td id="_<%= i %>_1"></td>
+    <td id="_<%= i %>_2"></td>
+    <td id="_<%= i %>_3"></td>
+    <td id="_<%= i %>_4"></td>
+  </tr>
+  <% end %>
+</table>
+
+<input type="button" onclick="location.href='/stats/';" value="Stats" />
 
 </body>
 </html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+$(document).ready(function() {
+    setInterval(function(){ 
+    	$.ajax( {
+          url: "/show/",
+          data: {},
+          success: function( data ) {
+          	var final = [];
+          	var i;
+          	window.alert(data['status']);
+          }
+        } ); }, 3000);
+});
+</script>
+
+</body>
+</html>

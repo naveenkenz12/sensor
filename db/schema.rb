@@ -16,8 +16,13 @@ ActiveRecord::Schema.define(version: 20161020081223) do
   enable_extension "plpgsql"
 
   create_table "dustbins", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.decimal  "filled_level"
+    t.decimal  "temperature"
+    t.string   "health"
+    t.string   "location"
+    t.string   "long_lat"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
 end

@@ -29,7 +29,7 @@ development:
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user that initialized the database.
-  username: naveenkenz12
+  username: don
 
   # The password associated with the postgres role (username).
   password:
@@ -37,7 +37,7 @@ development:
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
   # domain sockets, so uncomment these lines.
-  host: localhost
+  host: 192.168.42.17
 
   # The TCP port the server listens on. Defaults to 5432.
   # If your server runs on a different port number, change accordingly.
@@ -58,9 +58,9 @@ development:
 test:
   <<: *default
   database: sensor_test
-  username: naveenkenz12
+  username: don
   password:
-  host: localhost
+  host: 192.168.42.17
   port: 5130
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -74,7 +74,7 @@ test:
 # On Heroku and other platform providers, you may have a full connection URL
 # available as an environment variable. For example:
 #
-#   DATABASE_URL="postgres://myuser:mypass@localhost/somedatabase"
+#   DATABASE_URL="postgres://myuser:mypass@192.168.42.17/somedatabase"
 #
 # You can use this database configuration with:
 #
@@ -84,7 +84,7 @@ test:
 production:
   <<: *default
   database: sensor_production
-  username: naveenkenz12
+  username: don
   password:
-  host: 192.168.0.112
+  host: 192.168.42.17
   port: 5130

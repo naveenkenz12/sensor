@@ -1,2 +1,40 @@
-<h3>My Chart</h3>
-<%= @chart.render() %>
+<head>
+
+<script type="text/javascript">
+window.onload = function () {
+	var chart = new CanvasJS.Chart("chartContainer", {
+		theme: "theme2",//theme1
+		title:{
+			text: "Filled Level vs No. of Dustbins"              
+		},
+		animationEnabled: false,   // change to true
+		data: [              
+		{
+			// Change type to "bar", "area", "spline", "pie",etc.
+			type: "column",
+			dataPoints: [
+				{ label: "0-10%",  y: <%= @count_0 %> },
+				{ label: "11-20%", y: <%= @count_1 %>  },
+				{ label: "21-30%", y: <%= @count_2 %>  },
+				{ label: "31-40%",  y: <%= @count_3 %>  },
+				{ label: "41-50%",  y: <%= @count_4 %>  },
+				{ label: "51-60%",  y: <%= @count_5 %>  },
+				{ label: "61-70%",  y: <%= @count_6 %>  },
+				{ label: "71-80%",  y: <%= @count_7 %>  },
+				{ label: "81-90%",  y: <%= @count_8 %>  },
+				{ label: "91-100%",  y: <%= @count_9 %> }
+			]
+		}
+		]
+	});
+	chart.render();
+}
+
+</script>
+
+<script type="text/javascript" src="http://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</head>
+
+<body>
+<div id="chartContainer" style="height: 300px; width: 100%;"></div>
+</body>

@@ -36,14 +36,15 @@ $(document).ready(function() {
           	var i;
             for(i=1;i<=data['value'].length;i++)
             {
-              document.getElementById("_"+i.toString()+"_1").innerHTML = data['value'][i][0];
-              document.getElementById("_"+i.toString()+"_2").innerHTML = data['value'][i][1];
-              document.getElementById("_"+i.toString()+"_3").innerHTML = data['value'][i][2];
-              document.getElementById("_"+i.toString()+"_4").innerHTML = data['value'][i][3];
+              document.getElementById("_"+i.toString()+"_1").innerHTML = data['value'][i-1][0];
+              document.getElementById("_"+i.toString()+"_2").innerHTML = data['value'][i-1][1];
+              document.getElementById("_"+i.toString()+"_3").innerHTML = data['value'][i-1][2];
+              document.getElementById("_"+i.toString()+"_4").innerHTML = data['value'][i-1][3];
+              document.getElementById("_"+i.toString()).style.display = "";
             }
             for(i=data['value'].length+1;i<=50;i++)
             {
-              document,getElementById("_"+i.toString()).style.display = "none";
+              document.getElementById("_"+i.toString()).style.display = "none";
             }
           }
         } ); }, 15000);
